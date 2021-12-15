@@ -1,6 +1,6 @@
 <?php
 
-$prenom = isset($_GET['prenom']) ? $prenom = $_GET['prenom'] : "";
+// $prenom = isset($_GET['prenom']) ? $prenom = $_GET['prenom'] : "";
 
 ?>
 
@@ -21,7 +21,7 @@ $prenom = isset($_GET['prenom']) ? $prenom = $_GET['prenom'] : "";
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Prénom</a>
+      <a class="navbar-brand" href="/prenom">Prénom</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -44,13 +44,18 @@ $prenom = isset($_GET['prenom']) ? $prenom = $_GET['prenom'] : "";
 
   <div class="container">
 
+
+
     <form action="" class="mt-5">
       <input type="text" name="prenom" id="" />
       <button type="submit" class="btn btn-success">Go</button>
     </form>
 
 
-    <?php echo "<h1>Salut " . $prenom . "</h1>" ?>
+    <?php if (isset($_GET['prenom'])) {
+      echo '<h1>Bonchour ' . $_GET['prenom'] . ' !</h1>';
+    }
+    ?>
 
 
 
